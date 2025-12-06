@@ -33,38 +33,39 @@ Del análisis del problema, identificamos las siguientes clases:
 
 ## Código PlantUML
 
-```plantuml
-@startuml Ej1
+´´´
+    
+    @startuml Ej1
 
-class Autor{
-'Atributos'
- - nombre : str
- - apellido : str
- - nacionalidad : str
- - fechaNacimiento : date
+    class Autor{
+    'Atributos'
+    - nombre : str
+    - apellido : str
+    - nacionalidad : str
+    - fechaNacimiento : date
 
-'Métodos'
- + escribir()
- + getNombreCompleto() {derived}
-}
+    'Métodos'
+    + escribir()
+    + getNombreCompleto() {derived}
+    }
 
-class Libro{
-'Atributos'
- - titulo : str
- - isbn : str
- - numeroPaginas : int
- - precio : float
+    class Libro{
+    'Atributos'
+    - titulo : str
+    - isbn : str
+    - numeroPaginas : int
+    - precio : float
 
-'Métodos'
- + leer()
- + getTitulo()
- + getPrecio()
-}
+    'Métodos'
+    + leer()
+    + getTitulo()
+    + getPrecio()
+    }
 
-Autor "1" o--  "1..n" Libro : escribe
+    Autor "1" o--  "1..n" Libro : escribe
 
-@enduml
-```
+    @enduml
+´´´
 
 ## Implementación en Kotlin
 
