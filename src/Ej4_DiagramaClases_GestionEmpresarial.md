@@ -9,7 +9,7 @@
    * **Atributos**: `nombre_completo`, `fecha_nacimiento`, `sueldo_bruto`, `retencion`
    * **Métodos**: `calcular_edad()`
 
-2. **Supervisor**
+2. **Empleado_Responsable**
    * Empleado con responsabilidades de supervisión
    * **Atributos**: `puesto`
    * **Métodos**: `modificar_retencion()`, `modificar_sueldo_bruto()` 
@@ -28,16 +28,16 @@
 
 ## Análisis de Relaciones
 
-### 1. Herencia (Empleado → Supervisor)
+### 1. Herencia (Empleado → Empleado_Responsable)
 * **Tipo**: Generalización/Especialización
 * Un Supervisor **es un** Empleado con responsabilidades adicionales
 
-### 2. Asociación Jerárquica
+### 2. Asociación
 * **Relación**: "supervisa"
 * **Cardinalidad**: Supervisor (1) → Empleado (0..n)
 * Modela la estructura organizacional de la empresa
 
-### 3. Dependencia Técnica
+### 3. Dependencia
 * **Relación**: "calcula_salario_a" 
 * `Sistema_de_Pagos` utiliza datos de `Empleado` para cálculos
 
@@ -53,23 +53,23 @@
     @startuml Sistema_de_Gestion_Empresarial
 
     abstract class Empleado {
-    - nombre_completo
-    - fecha_nacimiento
-    - sueldo_bruto
-    - retencion
+    - nombre_completo : str
+    - fecha_nacimiento : date
+    - sueldo_bruto : int
+    - retencion : int
     + calcular_edad()
     }
 
     class Empleado_Responsable {
-    - puesto
+    - puesto : str
     + modificar_retencion()
     + modificar_sueldo_bruto()
     }
 
     class Cliente {
-    - nombre_completo
-    - fecha_nacimiento
-    - numero_telefono
+    - nombre_completo : str
+    - fecha_nacimiento : date
+    - numero_telefono : int
     }
 
     class Sistema_de_Pagos {
@@ -78,9 +78,9 @@
     }
 
     class Empresa {
-    - nombre_corporativo
-    - CIF
-    - direccion_fiscal
+    - nombre_corporativo : str
+    - CIF : int
+    - direccion_fiscal : str
     }
 
     Empleado <|-- Empleado_Responsable

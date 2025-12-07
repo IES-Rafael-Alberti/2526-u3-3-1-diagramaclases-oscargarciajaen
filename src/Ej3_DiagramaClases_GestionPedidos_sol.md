@@ -41,7 +41,7 @@ Un cliente tiene una o varias cuentas (cardinalidad 1 → 1..n). Esto permite qu
 Un cliente realiza uno o varios pedidos (cardinalidad 1 → 1..n). Cada pedido está asociado a un único cliente.
 
 **Relación Cuenta - TarjetaCredito**  
-Cada cuenta está vinculada a una única tarjeta de crédito (cardinalidad 1 → 1). Esto establece una relación uno a uno entre cuenta y tarjeta.
+Cada cuenta está vinculada a una única tarjeta de crédito (cardinalidad 1 --* 1 Composicion). Esto establece una relación uno a uno entre cuenta y tarjeta.
 
 ## Diagrama PlantUML
 
@@ -49,31 +49,31 @@ Cada cuenta está vinculada a una única tarjeta de crédito (cardinalidad 1 →
 @startuml Ejercicio3
 
 class Cliente {
-    + nombreCompleto
-    + direccionDeEnvio
-    + email
-    + numeroDeTelefono
+    + nombreCompleto : str
+    + direccionDeEnvio : str
+    + email : str
+    + numeroDeTelefono :int
 }
 
 class CuentaDePago {
-    + numeroDeCuenta
-    + saldoActual
+    + numeroDeCuenta : int
+    + saldoActual : int
     --
     + CobroPedido(pedido) : Boolean
 }
 
 class TarjetaDeCredito {
-    + numero
-    + fechaDeVencimiento
-    + saldoDisponible
+    + numero : int
+    + fechaDeVencimiento : date
+    + saldoDisponible : int
 }
 
 class Producto {
-    + codigoUnico
-    + nombre
-    + precioUnitario
-    + stock
-    + descripcion
+    + codigoUnico : ind
+    + nombre : str
+    + precioUnitario : int
+    + stock : int
+    + descripcion : str
     --
     + verificarStock()
 }
