@@ -50,6 +50,9 @@
 
 **Nota**: Completar diagrama PlantUML con todas las relaciones:  
 
+## Diagrama Clases
+
+![diagrama_Ejercicio6](../assets/Ej06.png)
 
 ## Código PlantUML
 
@@ -63,14 +66,14 @@
     }
 
     class Autor{
-        - nombre_completo
-        - fecha_nacimiento
-        - multa
+        - nombre_completo : str
+        - fecha_nacimiento: int
+        - multa : Int
     }
 
     class Sistema {
-        - libros_prestados
-        - libros_disponibles
+        - libros_prestados : str
+        - libros_disponibles: str
         + getEdad()
         + calcularEdad()
         + prestarLibro()
@@ -103,3 +106,66 @@
     @enduml
 ´´´
 
+## Codigo en Kotlin
+
+´´´
+
+    import java.time.localDate
+
+    class Libro(val tipo: String, val estado: String){
+
+    }
+
+    class Autor(val nombreCompleto: String, val fechaNacimiento: localDate, val multa: Int){
+
+    }
+
+    class Sistema(val librosPrestados: String, val librosDisponibles: String){
+        fun getEdad(){
+
+        }
+
+        fun calcularEdad(){
+
+        }
+
+        fun prestarLibro(){
+
+        }
+
+        fun devolverLibro(){
+
+        }
+
+        fun obtenerNumeroPrestamos(){
+
+        }
+
+        fun calcularFechaLimiteDevolucion(){
+
+        }
+    }
+
+    class Socio(val nombre: String, val dni: String, val fechaInscripcion: localDate, val numeroPrestamosPosibles: Int){
+        fun esperarDiasMulta(){
+
+        }
+    }
+
+    class Prestamo(val diaPrestamo: localDate, val numeroPrestamosSocio: Int){
+
+        fun modificarPrestamosPosibles(){
+
+        }
+        
+        fun modificarEstado(){
+
+        }
+
+        fun generarMulta(){
+            
+        }
+    }
+
+
+´´´
