@@ -45,14 +45,18 @@
 * **Descripción**: Director y Actor comparten atributos de Persona
 * **Justificación**: Evita duplicación de datos
 
+## Diagrama de Clases
+
+![Diagrama_ejercicio09](../assets/Ej09.png)
+
+
 ## Código PlantUML
 
 ´´´
 
     @startuml CatalogoPeliculas_Simple
 
-    ' Clases principales
-    class Persona {
+    Abstract class Persona {
         - nombreCompleto: str
         - fechaNacimiento: date
         - nacionalidad: str
@@ -85,6 +89,41 @@
     Participacion o-- "0..*" Pelicula
 
     @enduml
+
+´´´
+
+## Codigo en Kotlin
+
+´´´
+
+      import java.time.localDate
+
+      open class Persona(val nombreCompleto: String, val fechaNacimiento: localDate, val nacionalidad: String){
+         
+         fun getEdad(){
+
+         }
+      }
+
+      class Director() : Persona(val nombreCompleto: String, val fechaNacimiento: localDate, val nacionalidad: String){
+
+      }
+
+      class Actor() : Persona(val nombreCompleto: String, val fechaNacimiento: localDate, val nacionalidad: String){
+         
+      }
+
+      class Pelicula(val titulo: String, val añoEstreno: Int, val duracionMinutos: Int, val idiomaOriginal: String){
+         fun getDuracion(){
+
+         }
+      }
+
+      class Participacion(val papel: String){
+         fun getPapel(){
+            
+         }
+      }
 
 ´´´
 

@@ -40,6 +40,11 @@
 * **Cardinalidad**: Eliminatoria (1) → Partido (5)
 * **Justificación**: Exactamente 5 partidos por eliminatoria
 
+## Diagrama de Clases
+
+![Diagrama_ejercicio07](../assets/Ej07.png)
+
+
 ## Código PlantUML
 
 ´´´
@@ -77,7 +82,7 @@
         - setsGanadosEquipo1: int
         - setsGanadosEquipo2: int
         + getGanador()
-        + esPartidoGanado(equipo: Pais): boolean
+        + esPartidoGanado()
     }
 
     class ParejaDobles {
@@ -86,7 +91,6 @@
         + getJugadores()
     }
 
-    ' Relaciones
     Pais "1" -- "0..5" Jugador : contiene
     Pais "2" -- "1" Eliminatoria : compite_en
     Eliminatoria "1" --> "5" Partido : contiene
@@ -105,4 +109,57 @@
 
     @enduml
 
+´´´
+
+## Codigo en Kotlin
+
+´´´
+
+    import java.time.localDate
+
+    class Pais(val nombre: String, val bandera: String){
+        
+        fun getNombreCompleto(){
+
+        }
+    }
+
+    class Jugador(val nombreCompleto: String, val ranking: Int, val fechaNacimiento: localDate, val nacionalidad: String){
+
+        fun getEdad(){
+
+        }
+
+        fun getRanking(){
+
+        }
+    }
+
+    class Eliminatoria(val ronda: Int, val superficie: String, val paisAnfitrion: Pais, val fechaInicio: localDate){
+
+        fun getGanador(){
+
+        }
+
+        fun getMarcadorGlobal(){
+
+        }
+    }
+
+    class Partido(val numero: Int, val dia: Int, esDoble: Boolean, val setsGanadosEquipo1: Int, val setsGanadosEquipo2: Int){
+        
+        fun getGanador(){
+
+        }
+
+        fun esPartidoGanado(){
+
+        }
+    }
+
+    class ParejaDobles(val jugador1: Jugador, jugador2: Jugador){
+        fun getJugadores(){
+            
+        }
+    }
 ´´´
