@@ -43,10 +43,14 @@ Un cliente realiza uno o varios pedidos (cardinalidad 1 → 1..n). Cada pedido e
 **Relación Cuenta - TarjetaCredito**  
 Cada cuenta está vinculada a una única tarjeta de crédito (cardinalidad 1 --* 1 Composicion). Esto establece una relación uno a uno entre cuenta y tarjeta.
 
+## Diagrama de Clases
+
+![diagrama_Ejercicio3](../assets/Ej03.png)
+
 ## Diagrama PlantUML
 
 ```
-@startuml Ejercicio3
+@startuml
 
 class Cliente {
     + nombreCompleto : str
@@ -59,7 +63,7 @@ class CuentaDePago {
     + numeroDeCuenta : int
     + saldoActual : int
     --
-    + CobroPedido(pedido) : Boolean
+    + CobroPedido() : Boolean
 }
 
 class TarjetaDeCredito {
@@ -69,7 +73,7 @@ class TarjetaDeCredito {
 }
 
 class Producto {
-    + codigoUnico : ind
+    + codigoUnico : int
     + nombre : str
     + precioUnitario : int
     + stock : int
@@ -78,9 +82,8 @@ class Producto {
     + verificarStock()
 }
 
-' CAMBIO CLAVE: Clase abstracta PedidoBase con el estado como atributo String
 abstract class PedidoBase {
-    + idPedido
+    + idPedido: int
     + estado : String {PENDIENTE_DE_COBRO, PREPARADO, EN_DISTRIBUCION}
     --
     + obtenerImporteTotal()
@@ -97,8 +100,8 @@ class PedidoCompuesto extends PedidoBase {
 
 
 class LineaPedido {
-    + cantidad
-    + precioAplicado
+    + cantidad : int
+    + precioAplicado : float
 }
 
 PedidoSimple <|-- PedidoBase
@@ -116,3 +119,51 @@ PedidoSimple "1" -- "1" CuentaDePago : pagado_con
 
 ## Código en Kotlin
 
+´´´
+
+    import java.time.localDate
+
+    class Cliente(val nombreCompleto: String, val direccionDeEnvio: String, val email: String, val numeroTelefono: Int){
+
+    }
+
+    class CuentaDePago(val numeroDeCuenta: Int, val saldoActual: Int){
+
+        fun CobroPedido(){
+
+        }
+    }
+
+    class TarjetaDeCredito(val nuemro: Int, val fechaDeVencimiento: localDate, val saldoDisponible: Int){
+
+    }
+
+    class Producto(val codigoUnico: Int, val nombre: String, val precioUnitario: Int, val stock: Int, val descripcion: String){
+
+        fun verificarStock(){
+
+        }
+    }
+
+    open class PedidoBase(val idPedido: Int, val estado: String){
+
+        fun obtenerIMporteTotal(){
+
+        }
+    }   
+
+    class pedidoSimple() : PedidoBase(idPedido, estado){
+
+        fun verificarLimiteDeItems(){
+
+        }
+    }
+
+    class PedidoCompuesto() : PedidoBase(idPedido, estado){
+
+    }
+
+    class LineaPedido(val cantidad: Int, val precioAplicado: Float){
+
+    }
+´´´

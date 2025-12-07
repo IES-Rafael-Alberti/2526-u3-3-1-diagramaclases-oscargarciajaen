@@ -80,6 +80,11 @@ Cada matrícula corresponde a un único curso (cardinalidad 1 → 1). Una matrí
 
 La clase `Matricula` la he creado como **clase de asociación** entre `Estudiante` y `Curso`, representando la relación muchos a muchos entre ambas. Esto permite recibir múltiples inscripciones del mismo estudiante en distintos cursos, guardando a su vez la fecha de la matrícula y la nota obtenida.
 
+## Diagrama de Clases
+
+![diagrama_Ejercicio2](../assets/Ej02.png)
+
+
 ## Código PlantUML
 ´´´
 
@@ -134,5 +139,60 @@ La clase `Matricula` la he creado como **clase de asociación** entre `Estudiant
 
 ## Código en Kotlin
 
+´´´
 
+    import java.time.localDate
+
+    class Curso(val codigo: Int, val nombre: String, val descripcion: String, val creditos: Int, val nivel: String){
+
+    }
+
+    class Profesor(val id: Int, val nombre: String, val email: String, val departamento: String){
+
+        fun darClase(){
+
+        }
+
+        fun prepararExamenes(){
+
+        }
+
+        fun evaluarEstudiantes(){
+
+        }
+
+        fun getObtenerCursosImpartidos(){
+
+        }
+    }
+
+    class Estudiante(val numeroExpediente: Int, val nombreCompleto: String, val email: String, val fechaMatriculacion: localDate){
+
+        fun asistirAClase(){
+
+        }
+
+        fun esturdiar(){
+
+        }
+
+        fun presentarseAExamen(){
+
+        }
+    }
+
+    class Matricula(val fechaMatricula: localDate, val nota: Float){
+
+        fun actualizarNota(){
+
+        }
+
+        fun getFechaMatricula(){
+
+        }
+
+    }
+
+
+´´´
 
