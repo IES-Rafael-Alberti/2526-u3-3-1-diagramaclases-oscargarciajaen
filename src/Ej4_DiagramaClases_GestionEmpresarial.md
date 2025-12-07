@@ -48,6 +48,11 @@
 
 ## Diagrama de Clases
 
+![diagrama_Ejercicio4](../assets/Ej04.png)
+
+
+## Diagrama en PlantUml
+
 ´´´
 
     @startuml Sistema_de_Gestion_Empresarial
@@ -87,4 +92,47 @@
     Empleado_Responsable "1" --- "0..n" Empleado : supervisa
     Sistema_de_Pagos .> Empleado : calcula_salario_a
     Empresa "1.." -- "0.." Cliente : representado_por
+´´´
+
+## Código en Kotlin
+
+´´´
+
+      import java.time.localDate
+
+      open class Empleado(val nombreCompleto:   String, val fechaNacimiento: localDate, val sueldoBruto: Int, val retencion: Int){
+
+         fun calcularEdad(){
+
+         }
+      }
+
+      class EmpleadoResponsable(val puesto: String) : Empleado(val nombreCompleto: String, val fechaNacimiento: localDate, val sueldoBruto: Int, val retencion: Int){
+
+         fun modificarRetencion(){
+
+         }
+
+         fun modificarSueldoBruto(){
+
+         }
+      }
+
+      class Cliente(val nombreCompleto: String, val fechaNacimiento: localDate, val numeroTelefono: Int){
+
+      }
+
+      class SistemaDePagos(){
+         fun obtenerRetencion(){
+
+         }
+
+         fun calcularSalario(){
+
+         }
+      }
+
+      class Empresa(val nombreCorporativo: String, val cif: Int, val direccionFiscal: String){
+      
+      }
 ´´´
