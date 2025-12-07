@@ -107,7 +107,7 @@ La clase `Matricula` la he creado como **clase de asociación** entre `Estudiant
         + darClase()
         + prepararExamenes()
         + evaluarEstudiantes()
-        +                        getObtenerCursosImpartidos()
+        + getObtenerCursosImpartidos()
 
     }
     class Estudiante {
