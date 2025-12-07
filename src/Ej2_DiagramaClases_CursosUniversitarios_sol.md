@@ -1,4 +1,4 @@
-# Ejercicio: Cursos Universitarios
+# Cursos Universitarios
 
 ## Análisis del Problema
 

@@ -1,4 +1,4 @@
-## Solución: Ejercicio - Autor y Libro
+## Ejercicio - Autor y Libro
 
 ## Análisis del Problema
 

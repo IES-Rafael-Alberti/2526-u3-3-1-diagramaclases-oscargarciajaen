@@ -1,4 +1,4 @@
-# Ejercicio 6 - Sistema de Biblioteca 
+# Sistema de Biblioteca 
 
 ## Análisis del Problema 
 

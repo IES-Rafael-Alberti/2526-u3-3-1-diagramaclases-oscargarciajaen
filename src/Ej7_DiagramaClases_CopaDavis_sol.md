@@ -1,4 +1,4 @@
-# Ejercicio Copa Davis - Sistema de Competición
+# Ejercicio Copa Davis 
 
 ## Análisis del Problema
 

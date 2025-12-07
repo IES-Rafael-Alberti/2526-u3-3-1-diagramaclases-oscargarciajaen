@@ -1,4 +1,4 @@
-# Ejercicio: Gestion de pedidos
+# Gestion de pedidos
 
 ## Análisis del Problema
 

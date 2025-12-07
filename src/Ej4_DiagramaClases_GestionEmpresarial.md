@@ -1,4 +1,4 @@
-# Solución: Ejercicio - Sistema de Gestión Empresarial
+# Sistema de Gestión Empresarial
 
 ## Análisis del Problema
 
