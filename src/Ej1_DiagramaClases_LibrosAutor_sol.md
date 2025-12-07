@@ -33,8 +33,8 @@ Del análisis del problema, identificamos las siguientes clases:
 
 ## Código PlantUML
 
-```plantuml
-@startuml Ej1
+```
+@startuml
 
 class Autor{
 'Atributos'
@@ -68,7 +68,35 @@ Autor "1" o--  "1..n" Libro : escribe
 
 ## Implementación en Kotlin
 
+´´´
 
+    import java.time.LocalDate
 
-## Conceptos Clave de UML Aplicados
+    class Autor(val nombre: String, val apellido: String, val nacionalidad: String, fechaNacimiento: LocalDate) {
+        fun escribir() {
+
+        }
+
+        fun getNombreCompleto() {
+
+        }
+
+    }
+
+    class Libro(val titulo: String, val isbn: String, val numeroPaginas: String, val precio: Float) {
+        fun leer(){
+
+        }
+
+        fun getTitulo(){
+
+        }
+
+        fun getPrecio(){
+
+        }
+
+    }
+´´´
+
 
